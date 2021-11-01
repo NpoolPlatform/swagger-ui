@@ -1,0 +1,6 @@
+commonLabels:
+  # app: swagger-ui
+
+resources:
+- 01-swagger-ui.yaml
+- 02-http-ingress.yaml

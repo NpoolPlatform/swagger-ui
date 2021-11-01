@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: swagger-ui-ingress
+  namespace: kube-system
+  annotations:
+    k8s.swagger-ui.cn/displayName: swagger-ui
+    k8s.swagger-ui.cn/workload: swagger-ui
+    nginx.org/websocket-services: "swagger-ui"
+    nginx.com/sticky-cookie-services: "serviceName=swagger-ui srv_id expires=1h path=/"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: "devops-vpn-nginx-internal"
+spec:
+  rules:
+  - host: swagger-ui.internal-devops.development.npool.top
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: swagger-ui
+          servicePort: http
