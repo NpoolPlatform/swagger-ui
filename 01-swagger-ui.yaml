@@ -6,11 +6,6 @@ metadata:
 spec:
   selector:
     app: swagger-ui
-  clusterIP: None
-    #  type: NodePort
-    #  ports:
-    #    - port: 8080
-    #      targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
