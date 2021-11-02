@@ -3,4 +3,4 @@ commonLabels:
 
 resources:
 - 01-swagger-ui.yaml
-- 02-http-ingress.yaml
+- 02-ingress.yaml
