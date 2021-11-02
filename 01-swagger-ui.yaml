@@ -32,8 +32,8 @@ spec:
       containers:
       - name: swagger-ui
         image: swaggerapi/swagger-ui
-        ports:
-        - containerPort: 8080
+        #        ports:
+        #        - containerPort: 8080
         env:
         - name: BASE_URL
           value: /
