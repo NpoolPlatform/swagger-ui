@@ -12,7 +12,7 @@ pipeline {
         expression { DEPLOY_TARGET == 'true' }
       }
       steps {
-        sh 'sed -i "s/kuboard.internal-devops.development.npool.top/kuboard.internal-devops.$TARGET_ENV.npool.top/g" 02-ingress.yaml'
+        sh 'sed -i "s/kuboard.internal-devops.development.npool.top/kuboard.internal-devops.$TARGET_ENV.npool.top/g" 03-ingress.yaml'
         sh 'cd /etc/kubeasz; ./ezctl checkout $TARGET_ENV'
         sh 'kubectl apply -k .'
       }
