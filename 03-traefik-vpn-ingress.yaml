@@ -6,10 +6,10 @@ metadata:
   annotations:
     k8s.swagger-ui.cn/displayName: swagger-ui
     k8s.swagger-ui.cn/workload: swagger-ui
-    nginx.org/websocket-services: "swagger-ui"
-    nginx.com/sticky-cookie-services: "serviceName=swagger-ui srv_id expires=1h path=/"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     kubernetes.io/ingress.class: "devops-vpn-nginx-internal"
+    kubernetes.io/ingress.class: "traefik-internet-vpn"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure, web
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-common-headers@kubernetescrd
 spec:
   rules:
   - host: swagger-ui.internal-devops.development.npool.top
